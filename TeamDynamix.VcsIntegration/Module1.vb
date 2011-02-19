@@ -9,7 +9,7 @@
   Private mCommit As CommitInfo
   Private mTicketId As Int32
   Private Const cTicketMatchExp As String = "(?:ticket|bug)\s+(\d+)"
-  Private Const cCommentFormat As String = "{0} committed revision {1} and said ""{2}"""
+  Private Const cCommentFormat As String = "{0} committed revision {1} to {2} and said ""{3}"""
 
   Sub Main()
 
@@ -102,8 +102,8 @@
   Private Sub AddCommentToTicket()
 
     'TODO: implement on server side - need to write a normal add comment API method
-    Dim comment As String = String.Format(cCommentFormat, mCommit.User, mRevision, mCommit.Message)
-    
+    Dim comment As String = String.Format(cCommentFormat, mCommit.User, mRevision, mRepositoryUrl, mCommit.Message)
+
   End Sub
 
 End Module
