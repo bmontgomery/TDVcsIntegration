@@ -1,0 +1,12 @@
+TD VCS INTEGRATION TOOL
+
+accept repository URL and revision number arguments
+be able to log in to VCS to get information out (read-only)
+extract user, commit message from VCS
+determine whether or not commit pertains to a ticket
+add comment to ticket using TD web services using proxy TD user
+add patch file with changes as attachment to ticket
+
+TD VCS SERVICE SIDE
+
+map VCS user to TD user
