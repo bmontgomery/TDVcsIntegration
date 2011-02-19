@@ -11,6 +11,17 @@ Public Class SubversionProvider
       client.Log(New System.Uri(repositoryUrl),
                  New SvnLogArgs(New SvnRevisionRange(revision, revision)),
                  New EventHandler(Of SvnLogEventArgs)(AddressOf LogEventHandler))
+
+      Using diffStream As New IO.MemoryStream()
+        If client.Diff(New SvnUriTarget(repositoryUrl), New SvnRevisionRange(revision, CInt(revision) - 1), diffStream) Then
+
+          diffStream.Position = 0
+          Using reader As New IO.StreamReader(diffStream)
+            mCommit.Patch = reader.ReadToEnd()
+          End Using
+
+        End If
+      End Using
     End Using
 
     Return mCommit

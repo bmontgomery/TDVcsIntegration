@@ -1,6 +1,7 @@
 ﻿Public Class CommitInfo
   Public Property User As String
   Public Property Message As String
+  Public Property Patch As String
 
   Public Sub New()
   End Sub
