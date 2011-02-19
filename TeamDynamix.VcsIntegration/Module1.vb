@@ -4,6 +4,8 @@
   Private mRevision As String
   Private mVcsUserName As String
   Private mVcsPassword As String
+  Private mTDProxyUser As String
+  Private mTDProxyPassword As String
   Private mCommit As CommitInfo
   Private mTicketId As Int32
   Private Const cTicketMatchExp As String = "(?:ticket|bug)\s+(\d+)"
@@ -89,11 +91,20 @@
 
   End Function
 
+  Private Sub GetTDProxyUserInfo()
+
+    mTDProxyUser = Configuration.ConfigurationManager.AppSettings("TDProxyUser")
+    mTDProxyPassword = Configuration.ConfigurationManager.AppSettings("TDProxyPasswrd")
+
+    If String.IsNullOrEmpty(mTDProxyUser) Or String.IsNullOrEmpty(mTDProxyPassword) Then Throw New ApplicationException("invalid TeamDynamix proxy user configuration")
+
+  End Sub
+
   Private Sub AddCommentToTicket()
 
-    'TODO: implement
+    'TODO: implement on server side - need to write a normal add comment API method
     Dim comment As String = String.Format(cCommentFormat, mCommit.User, mRevision, mCommit.Message)
-
+    
   End Sub
 
   Private Sub AttachPatchToTicket()
