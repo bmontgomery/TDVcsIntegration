@@ -39,17 +39,23 @@
 
     Dim vcs As IVcsProvider = GetVcsProvider()
 
-    If vcs Is Nothing Then Throw New ApplicationException("VCS provider not configured")
-
     GetVcsProxyUserInfo()
-    mCommit = vcs.GetCommitInfo(mVcsUserName, mVcsPassword, mRevision)
+    mCommit = vcs.GetCommitInfo(mVcsUserName, mVcsPassword, mRepositoryUrl, mRevision)
 
     If mCommit Is Nothing Then Throw New ApplicationException("could not load commit data")
 
   End Sub
 
   Private Function GetVcsProvider()
+
     'TODO: implement DI logic here
+    Dim vcsProvider As String = Configuration.ConfigurationManager.AppSettings("VcsProvider")
+    If String.IsNullOrEmpty(vcsProvider) Then Throw New ApplicationException("VCS provider not configured")
+
+    If String.Equals(vcsProvider, "Subversion", StringComparison.CurrentCultureIgnoreCase) Then
+      Return New SubversionProvider()
+    End If
+
   End Function
 
   Private Sub GetVcsProxyUserInfo()
