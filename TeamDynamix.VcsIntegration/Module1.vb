@@ -20,6 +20,8 @@
 
       If CommitPertainsToTicket() Then
         AddCommentToTicket()
+      ElseIf StatusFeedIntegrationIsEnabled() Then
+        AddStatusFeedComment()
       End If
 
     Catch ex As Exception
@@ -99,11 +101,29 @@
 
   End Sub
 
+  Private Function GetFormattedComment() As String
+    Return String.Format(cCommentFormat, mCommit.User, mRevision, mCommit.Message)
+  End Function
+
   Private Sub AddCommentToTicket()
 
+    'TODO: implement
     'TODO: implement on server side - need to write a normal add comment API method
-    Dim comment As String = String.Format(cCommentFormat, mCommit.User, mRevision, mCommit.Message)
+    Dim comment As String = GetFormattedComment()
     
+  End Sub
+
+  Private Function StatusFeedIntegrationIsEnabled() As Boolean
+    Return String.IsNullOrEmpty(Configuration.ConfigurationManager.AppSettings("EnableStatusFeedIntegration")) AndAlso
+      String.Equals(Configuration.ConfigurationManager.AppSettings("EnableStatusFeedIntegration"), "true")
+  End Function
+
+  Private Sub AddStatusFeedComment()
+
+    'TODO: implement
+    'TODO: write server side web service API for adding status feed comments
+    Dim comment As String = GetFormattedComment()
+
   End Sub
 
 End Module
