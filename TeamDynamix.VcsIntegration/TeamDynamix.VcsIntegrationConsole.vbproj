@@ -55,6 +55,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -100,9 +101,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="lib\SharpPlink-Win32.svnExe" />
-    <None Include="lib\SharpSvn.wxs" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -120,11 +122,7 @@
     <Content Include="lib\SharpSvn-DB44-20-win32.dll" />
     <Content Include="lib\SharpSvn-Sasl21-23-win32.dll" />
     <Content Include="lib\SharpSvn.dll" />
-    <Content Include="lib\SharpSvn.pdb" />
     <Content Include="lib\SharpSvn.UI.dll" />
-    <Content Include="lib\SharpSvn.UI.pdb" />
-    <Content Include="lib\SharpSvn.UI.xml" />
-    <Content Include="lib\SharpSvn.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
