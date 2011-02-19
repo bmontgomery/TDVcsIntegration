@@ -18,6 +18,7 @@
 
       If CommitPertainsToTicket() Then
         AddCommentToTicket()
+        AttachPatchToTicket()
       End If
 
     Catch ex As Exception
@@ -93,6 +94,10 @@
     'TODO: implement
     Dim comment As String = String.Format(cCommentFormat, mCommit.User, mRevision, mCommit.Message)
 
+  End Sub
+
+  Private Sub AttachPatchToTicket()
+    'TODO: implement
   End Sub
 
 End Module
