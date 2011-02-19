@@ -6,7 +6,7 @@
   Private mVcsPassword As String
   Private mCommit As CommitInfo
   Private mTicketId As Int32
-  Private Const cTicketMatchExp As String = "(?:ticket|bug)\s(\d+)"
+  Private Const cTicketMatchExp As String = "(?:ticket|bug)\s+(\d+)"
   Private Const cCommentFormat As String = "{0} committed revision {1} and said ""{2}"""
 
   Sub Main()
