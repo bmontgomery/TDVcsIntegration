@@ -5,6 +5,8 @@
   Private mVcsUserName As String
   Private mVcsPassword As String
   Private mCommit As CommitInfo
+  Private mTicketId As Int32
+  Private Const cTicketMatchExp As String = "(?:ticket|bug)\s(\d+)"
 
   Sub Main()
 
@@ -56,6 +58,8 @@
       Return New SubversionProvider()
     End If
 
+    Return Nothing
+
   End Function
 
   Private Sub GetVcsProxyUserInfo()
@@ -68,8 +72,19 @@
   End Sub
 
   Private Function CommitPertainsToTicket() As Boolean
-    'TODO: implement logic here
-    Return False
+
+    'run a regex to determine if it's a match
+    Dim isMatch As Boolean = False
+    Dim regEx As New Text.RegularExpressions.Regex(cTicketMatchExp)
+    Dim match As Text.RegularExpressions.Match = regEx.Match(mCommit.Message)
+
+    If match IsNot Nothing AndAlso match.Groups.Count > 1 Then
+      mTicketId = match.Groups(1).Value
+      isMatch = True
+    End If
+
+    Return isMatch
+
   End Function
 
   Private Sub AddCommentToTicket()

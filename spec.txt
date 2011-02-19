@@ -4,7 +4,7 @@ DONE accept repository URL and revision number arguments
 DONE be able to log in to VCS to get information out (read-only)
   NOTE: had to use command line svn client to permanently accept server certificate
 DONE extract user, commit message from VCS
-determine whether or not commit pertains to a ticket
+DONE determine whether or not commit pertains to a ticket
 add comment to ticket using TD web services using proxy TD user
 add patch file with changes as attachment to ticket
 

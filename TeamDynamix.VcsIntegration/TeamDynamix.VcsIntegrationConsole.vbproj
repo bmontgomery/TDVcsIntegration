@@ -113,7 +113,9 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="lib\SharpSvn-DB44-20-win32.dll" />
     <Content Include="lib\SharpSvn-Sasl21-23-win32.dll" />
