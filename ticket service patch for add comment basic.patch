@@ -1,0 +1,34 @@
+Index: TeamDynamix/Enterprise/Development/trunk/TDWS/Tickets.asmx.vb
+===================================================================
+--- TeamDynamix/Enterprise/Development/trunk/TDWS/Tickets.asmx.vb	(revision 9694)
++++ TeamDynamix/Enterprise/Development/trunk/TDWS/Tickets.asmx.vb	(working copy)
+@@ -579,6 +579,29 @@
+ 
+   End Function
+ 
++  <WebMethod()> _
++  Public Sub AddTicketCommentBasic(ByVal userName As String, ByVal password As String, ByVal ticketId As String, ByVal comment As String, ByVal isPrivate As Boolean)
++
++    Try
++
++      Dim oWSUser As New WSUser(userName, password)
++
++      'validate user
++      If Not oWSUser.IsValidUser() Then Exit Sub
++
++      'load the ticket, add the comment
++      'note: don't need to html-encode the comments because they are html-encoded on the way out of the database
++      Dim oTicket As New TeamDynamix.Domain.Tickets.Ticket(oWSUser.UID, oWSUser.BEID, Me.DbConnStr, ticketId)
++      If oTicket.Load(TeamDynamix.Domain.Tickets.Ticket.ApplicationName.TDTickets) Then
++        oTicket.InsertComments(comment, isPrivate)
++      End If
++
++    Catch ex As Exception
++      TeamDynamix.Domain.TDError.HandleException(Me.DbConnStr, String.Empty, ex)
++    End Try
++
++  End Sub
++
+   ''' <summary>
+   ''' Adds a comment to a ticket.
+   ''' </summary> 
