@@ -1,0 +1,1179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.teamdynamix.com/TDWS" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s1="http://www.teamdynamix.com/TDWS/AbstractTypes" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.teamdynamix.com/TDWS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.teamdynamix.com/TDWS">
+      <s:element name="CreateTicketEx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AccountID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TypeID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PriorityID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="StatusID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="DueDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="Budget" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="TimeBudget" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="EstHours" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApproverUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RefCode1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Weight" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTicketExResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateTicketExResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTicketNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AccountID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TypeID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PriorityID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="StatusID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="DueDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="Budget" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="TimeBudget" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="EstHours" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApproverUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RefCode1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Weight" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="descIsHtmlEncoded" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTicketNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateTicketNewResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccounts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTicketTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTicketTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTicketTypesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPriorities">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPrioritiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPrioritiesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTicketStatuses">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTicketStatusesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTicketStatusesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTicketAttributes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTicketAttributesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTicketAttributesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTickets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="GetHistory" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="GetAssignments" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="GetAttributes" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="TicketID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="StatusIDs" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AccountID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TypeID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="DueDateFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DueDateTo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateCreatedFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateCreatedTo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PriorityIDs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CreatorUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReviewerUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApproverUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ResponsibleUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PrimaryResponsibleUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ShowOnlyUnassigned" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="RefCode1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TitleLike" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTicketsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTicketsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTicketAttachment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TicketID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileBytes" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTicketAttachmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddTicketAttachmentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTicketCommentBasic">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ticketId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isPrivate" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTicketCommentBasicResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddTicketComment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailBodyHTML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromEmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsPrivate" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTicketCommentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddTicketCommentResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="int" type="s:int" />
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+    <s:schema targetNamespace="http://www.teamdynamix.com/TDWS/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateTicketExSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateTicketEx" />
+  </wsdl:message>
+  <wsdl:message name="CreateTicketExSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateTicketExResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateTicketNewSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateTicketNew" />
+  </wsdl:message>
+  <wsdl:message name="CreateTicketNewSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateTicketNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccounts" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTicketTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTicketTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPrioritiesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPriorities" />
+  </wsdl:message>
+  <wsdl:message name="GetPrioritiesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPrioritiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketStatusesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTicketStatuses" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketStatusesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTicketStatusesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketAttributesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTicketAttributes" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketAttributesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTicketAttributesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTickets" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTicketsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddTicketAttachmentSoapIn">
+    <wsdl:part name="parameters" element="tns:AddTicketAttachment" />
+  </wsdl:message>
+  <wsdl:message name="AddTicketAttachmentSoapOut">
+    <wsdl:part name="parameters" element="tns:AddTicketAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddTicketCommentBasicSoapIn">
+    <wsdl:part name="parameters" element="tns:AddTicketCommentBasic" />
+  </wsdl:message>
+  <wsdl:message name="AddTicketCommentBasicSoapOut">
+    <wsdl:part name="parameters" element="tns:AddTicketCommentBasicResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddTicketCommentSoapIn">
+    <wsdl:part name="parameters" element="tns:AddTicketComment" />
+  </wsdl:message>
+  <wsdl:message name="AddTicketCommentSoapOut">
+    <wsdl:part name="parameters" element="tns:AddTicketCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateTicketExHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Title" type="s:string" />
+    <wsdl:part name="AccountID" type="s:string" />
+    <wsdl:part name="TypeID" type="s:string" />
+    <wsdl:part name="PriorityID" type="s:string" />
+    <wsdl:part name="StatusID" type="s:string" />
+    <wsdl:part name="ContactName" type="s:string" />
+    <wsdl:part name="ContactEmail" type="s:string" />
+    <wsdl:part name="Description" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="DueDate" type="s:string" />
+    <wsdl:part name="Budget" type="s:string" />
+    <wsdl:part name="TimeBudget" type="s:string" />
+    <wsdl:part name="EstHours" type="s:string" />
+    <wsdl:part name="ApproverUID" type="s:string" />
+    <wsdl:part name="RefCode1" type="s:string" />
+    <wsdl:part name="Weight" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateTicketExHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="CreateTicketNewHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Title" type="s:string" />
+    <wsdl:part name="AccountID" type="s:string" />
+    <wsdl:part name="TypeID" type="s:string" />
+    <wsdl:part name="PriorityID" type="s:string" />
+    <wsdl:part name="StatusID" type="s:string" />
+    <wsdl:part name="ContactName" type="s:string" />
+    <wsdl:part name="ContactEmail" type="s:string" />
+    <wsdl:part name="Description" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="DueDate" type="s:string" />
+    <wsdl:part name="Budget" type="s:string" />
+    <wsdl:part name="TimeBudget" type="s:string" />
+    <wsdl:part name="EstHours" type="s:string" />
+    <wsdl:part name="ApproverUID" type="s:string" />
+    <wsdl:part name="RefCode1" type="s:string" />
+    <wsdl:part name="Weight" type="s:string" />
+    <wsdl:part name="descIsHtmlEncoded" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateTicketNewHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountsHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketTypesHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketTypesHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetPrioritiesHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPrioritiesHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketStatusesHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketStatusesHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketAttributesHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketAttributesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketsHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="GetHistory" type="s:string" />
+    <wsdl:part name="GetAssignments" type="s:string" />
+    <wsdl:part name="GetAttributes" type="s:string" />
+    <wsdl:part name="TicketID" type="s:string" />
+    <wsdl:part name="StatusIDs" type="s:string" />
+    <wsdl:part name="AccountID" type="s:string" />
+    <wsdl:part name="TypeID" type="s:string" />
+    <wsdl:part name="DueDateFrom" type="s:string" />
+    <wsdl:part name="DueDateTo" type="s:string" />
+    <wsdl:part name="DateCreatedFrom" type="s:string" />
+    <wsdl:part name="DateCreatedTo" type="s:string" />
+    <wsdl:part name="PriorityIDs" type="s:string" />
+    <wsdl:part name="CreatorUID" type="s:string" />
+    <wsdl:part name="ReviewerUID" type="s:string" />
+    <wsdl:part name="ApproverUID" type="s:string" />
+    <wsdl:part name="ResponsibleUID" type="s:string" />
+    <wsdl:part name="PrimaryResponsibleUID" type="s:string" />
+    <wsdl:part name="ShowOnlyUnassigned" type="s:string" />
+    <wsdl:part name="RefCode1" type="s:string" />
+    <wsdl:part name="TitleLike" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddTicketAttachmentHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="TicketID" type="s:string" />
+    <wsdl:part name="FileName" type="s:string" />
+    <wsdl:part name="FileBytes" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="AddTicketAttachmentHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddTicketCommentBasicHttpGetIn">
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="ticketId" type="s:string" />
+    <wsdl:part name="comment" type="s:string" />
+    <wsdl:part name="isPrivate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddTicketCommentBasicHttpGetOut" />
+  <wsdl:message name="AddTicketCommentHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="EmailBodyHTML" type="s:string" />
+    <wsdl:part name="FromEmailAddress" type="s:string" />
+    <wsdl:part name="FromName" type="s:string" />
+    <wsdl:part name="IsPrivate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddTicketCommentHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="CreateTicketExHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Title" type="s:string" />
+    <wsdl:part name="AccountID" type="s:string" />
+    <wsdl:part name="TypeID" type="s:string" />
+    <wsdl:part name="PriorityID" type="s:string" />
+    <wsdl:part name="StatusID" type="s:string" />
+    <wsdl:part name="ContactName" type="s:string" />
+    <wsdl:part name="ContactEmail" type="s:string" />
+    <wsdl:part name="Description" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="DueDate" type="s:string" />
+    <wsdl:part name="Budget" type="s:string" />
+    <wsdl:part name="TimeBudget" type="s:string" />
+    <wsdl:part name="EstHours" type="s:string" />
+    <wsdl:part name="ApproverUID" type="s:string" />
+    <wsdl:part name="RefCode1" type="s:string" />
+    <wsdl:part name="Weight" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateTicketExHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="CreateTicketNewHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Title" type="s:string" />
+    <wsdl:part name="AccountID" type="s:string" />
+    <wsdl:part name="TypeID" type="s:string" />
+    <wsdl:part name="PriorityID" type="s:string" />
+    <wsdl:part name="StatusID" type="s:string" />
+    <wsdl:part name="ContactName" type="s:string" />
+    <wsdl:part name="ContactEmail" type="s:string" />
+    <wsdl:part name="Description" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="DueDate" type="s:string" />
+    <wsdl:part name="Budget" type="s:string" />
+    <wsdl:part name="TimeBudget" type="s:string" />
+    <wsdl:part name="EstHours" type="s:string" />
+    <wsdl:part name="ApproverUID" type="s:string" />
+    <wsdl:part name="RefCode1" type="s:string" />
+    <wsdl:part name="Weight" type="s:string" />
+    <wsdl:part name="descIsHtmlEncoded" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateTicketNewHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountsHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketTypesHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketTypesHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetPrioritiesHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPrioritiesHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketStatusesHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketStatusesHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketAttributesHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketAttributesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketsHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="GetHistory" type="s:string" />
+    <wsdl:part name="GetAssignments" type="s:string" />
+    <wsdl:part name="GetAttributes" type="s:string" />
+    <wsdl:part name="TicketID" type="s:string" />
+    <wsdl:part name="StatusIDs" type="s:string" />
+    <wsdl:part name="AccountID" type="s:string" />
+    <wsdl:part name="TypeID" type="s:string" />
+    <wsdl:part name="DueDateFrom" type="s:string" />
+    <wsdl:part name="DueDateTo" type="s:string" />
+    <wsdl:part name="DateCreatedFrom" type="s:string" />
+    <wsdl:part name="DateCreatedTo" type="s:string" />
+    <wsdl:part name="PriorityIDs" type="s:string" />
+    <wsdl:part name="CreatorUID" type="s:string" />
+    <wsdl:part name="ReviewerUID" type="s:string" />
+    <wsdl:part name="ApproverUID" type="s:string" />
+    <wsdl:part name="ResponsibleUID" type="s:string" />
+    <wsdl:part name="PrimaryResponsibleUID" type="s:string" />
+    <wsdl:part name="ShowOnlyUnassigned" type="s:string" />
+    <wsdl:part name="RefCode1" type="s:string" />
+    <wsdl:part name="TitleLike" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddTicketAttachmentHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="TicketID" type="s:string" />
+    <wsdl:part name="FileName" type="s:string" />
+    <wsdl:part name="FileBytes" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="AddTicketAttachmentHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddTicketCommentBasicHttpPostIn">
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="ticketId" type="s:string" />
+    <wsdl:part name="comment" type="s:string" />
+    <wsdl:part name="isPrivate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddTicketCommentBasicHttpPostOut" />
+  <wsdl:message name="AddTicketCommentHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="EmailBodyHTML" type="s:string" />
+    <wsdl:part name="FromEmailAddress" type="s:string" />
+    <wsdl:part name="FromName" type="s:string" />
+    <wsdl:part name="IsPrivate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddTicketCommentHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:portType name="TicketsSoap">
+    <wsdl:operation name="CreateTicketEx">
+      <wsdl:input message="tns:CreateTicketExSoapIn" />
+      <wsdl:output message="tns:CreateTicketExSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTicketNew">
+      <wsdl:input message="tns:CreateTicketNewSoapIn" />
+      <wsdl:output message="tns:CreateTicketNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccounts">
+      <wsdl:input message="tns:GetAccountsSoapIn" />
+      <wsdl:output message="tns:GetAccountsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketTypes">
+      <wsdl:input message="tns:GetTicketTypesSoapIn" />
+      <wsdl:output message="tns:GetTicketTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPriorities">
+      <wsdl:input message="tns:GetPrioritiesSoapIn" />
+      <wsdl:output message="tns:GetPrioritiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketStatuses">
+      <wsdl:input message="tns:GetTicketStatusesSoapIn" />
+      <wsdl:output message="tns:GetTicketStatusesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketAttributes">
+      <wsdl:input message="tns:GetTicketAttributesSoapIn" />
+      <wsdl:output message="tns:GetTicketAttributesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTickets">
+      <wsdl:input message="tns:GetTicketsSoapIn" />
+      <wsdl:output message="tns:GetTicketsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTicketAttachment">
+      <wsdl:input message="tns:AddTicketAttachmentSoapIn" />
+      <wsdl:output message="tns:AddTicketAttachmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTicketCommentBasic">
+      <wsdl:input message="tns:AddTicketCommentBasicSoapIn" />
+      <wsdl:output message="tns:AddTicketCommentBasicSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTicketComment">
+      <wsdl:input message="tns:AddTicketCommentSoapIn" />
+      <wsdl:output message="tns:AddTicketCommentSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TicketsHttpGet">
+    <wsdl:operation name="CreateTicketEx">
+      <wsdl:input message="tns:CreateTicketExHttpGetIn" />
+      <wsdl:output message="tns:CreateTicketExHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTicketNew">
+      <wsdl:input message="tns:CreateTicketNewHttpGetIn" />
+      <wsdl:output message="tns:CreateTicketNewHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccounts">
+      <wsdl:input message="tns:GetAccountsHttpGetIn" />
+      <wsdl:output message="tns:GetAccountsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketTypes">
+      <wsdl:input message="tns:GetTicketTypesHttpGetIn" />
+      <wsdl:output message="tns:GetTicketTypesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPriorities">
+      <wsdl:input message="tns:GetPrioritiesHttpGetIn" />
+      <wsdl:output message="tns:GetPrioritiesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketStatuses">
+      <wsdl:input message="tns:GetTicketStatusesHttpGetIn" />
+      <wsdl:output message="tns:GetTicketStatusesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketAttributes">
+      <wsdl:input message="tns:GetTicketAttributesHttpGetIn" />
+      <wsdl:output message="tns:GetTicketAttributesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTickets">
+      <wsdl:input message="tns:GetTicketsHttpGetIn" />
+      <wsdl:output message="tns:GetTicketsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTicketAttachment">
+      <wsdl:input message="tns:AddTicketAttachmentHttpGetIn" />
+      <wsdl:output message="tns:AddTicketAttachmentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTicketCommentBasic">
+      <wsdl:input message="tns:AddTicketCommentBasicHttpGetIn" />
+      <wsdl:output message="tns:AddTicketCommentBasicHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTicketComment">
+      <wsdl:input message="tns:AddTicketCommentHttpGetIn" />
+      <wsdl:output message="tns:AddTicketCommentHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TicketsHttpPost">
+    <wsdl:operation name="CreateTicketEx">
+      <wsdl:input message="tns:CreateTicketExHttpPostIn" />
+      <wsdl:output message="tns:CreateTicketExHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTicketNew">
+      <wsdl:input message="tns:CreateTicketNewHttpPostIn" />
+      <wsdl:output message="tns:CreateTicketNewHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccounts">
+      <wsdl:input message="tns:GetAccountsHttpPostIn" />
+      <wsdl:output message="tns:GetAccountsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketTypes">
+      <wsdl:input message="tns:GetTicketTypesHttpPostIn" />
+      <wsdl:output message="tns:GetTicketTypesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPriorities">
+      <wsdl:input message="tns:GetPrioritiesHttpPostIn" />
+      <wsdl:output message="tns:GetPrioritiesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketStatuses">
+      <wsdl:input message="tns:GetTicketStatusesHttpPostIn" />
+      <wsdl:output message="tns:GetTicketStatusesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketAttributes">
+      <wsdl:input message="tns:GetTicketAttributesHttpPostIn" />
+      <wsdl:output message="tns:GetTicketAttributesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTickets">
+      <wsdl:input message="tns:GetTicketsHttpPostIn" />
+      <wsdl:output message="tns:GetTicketsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTicketAttachment">
+      <wsdl:input message="tns:AddTicketAttachmentHttpPostIn" />
+      <wsdl:output message="tns:AddTicketAttachmentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTicketCommentBasic">
+      <wsdl:input message="tns:AddTicketCommentBasicHttpPostIn" />
+      <wsdl:output message="tns:AddTicketCommentBasicHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTicketComment">
+      <wsdl:input message="tns:AddTicketCommentHttpPostIn" />
+      <wsdl:output message="tns:AddTicketCommentHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TicketsSoap" type="tns:TicketsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateTicketEx">
+      <soap:operation soapAction="http://www.teamdynamix.com/TDWS/CreateTicketEx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTicketNew">
+      <soap:operation soapAction="http://www.teamdynamix.com/TDWS/CreateTicketNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccounts">
+      <soap:operation soapAction="http://www.teamdynamix.com/TDWS/GetAccounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketTypes">
+      <soap:operation soapAction="http://www.teamdynamix.com/TDWS/GetTicketTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriorities">
+      <soap:operation soapAction="http://www.teamdynamix.com/TDWS/GetPriorities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketStatuses">
+      <soap:operation soapAction="http://www.teamdynamix.com/TDWS/GetTicketStatuses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketAttributes">
+      <soap:operation soapAction="http://www.teamdynamix.com/TDWS/GetTicketAttributes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTickets">
+      <soap:operation soapAction="http://www.teamdynamix.com/TDWS/GetTickets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTicketAttachment">
+      <soap:operation soapAction="http://www.teamdynamix.com/TDWS/AddTicketAttachment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTicketCommentBasic">
+      <soap:operation soapAction="http://www.teamdynamix.com/TDWS/AddTicketCommentBasic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTicketComment">
+      <soap:operation soapAction="http://www.teamdynamix.com/TDWS/AddTicketComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TicketsSoap12" type="tns:TicketsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateTicketEx">
+      <soap12:operation soapAction="http://www.teamdynamix.com/TDWS/CreateTicketEx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTicketNew">
+      <soap12:operation soapAction="http://www.teamdynamix.com/TDWS/CreateTicketNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccounts">
+      <soap12:operation soapAction="http://www.teamdynamix.com/TDWS/GetAccounts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketTypes">
+      <soap12:operation soapAction="http://www.teamdynamix.com/TDWS/GetTicketTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriorities">
+      <soap12:operation soapAction="http://www.teamdynamix.com/TDWS/GetPriorities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketStatuses">
+      <soap12:operation soapAction="http://www.teamdynamix.com/TDWS/GetTicketStatuses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketAttributes">
+      <soap12:operation soapAction="http://www.teamdynamix.com/TDWS/GetTicketAttributes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTickets">
+      <soap12:operation soapAction="http://www.teamdynamix.com/TDWS/GetTickets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTicketAttachment">
+      <soap12:operation soapAction="http://www.teamdynamix.com/TDWS/AddTicketAttachment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTicketCommentBasic">
+      <soap12:operation soapAction="http://www.teamdynamix.com/TDWS/AddTicketCommentBasic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTicketComment">
+      <soap12:operation soapAction="http://www.teamdynamix.com/TDWS/AddTicketComment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TicketsHttpGet" type="tns:TicketsHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="CreateTicketEx">
+      <http:operation location="/CreateTicketEx" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTicketNew">
+      <http:operation location="/CreateTicketNew" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccounts">
+      <http:operation location="/GetAccounts" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketTypes">
+      <http:operation location="/GetTicketTypes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriorities">
+      <http:operation location="/GetPriorities" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketStatuses">
+      <http:operation location="/GetTicketStatuses" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketAttributes">
+      <http:operation location="/GetTicketAttributes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTickets">
+      <http:operation location="/GetTickets" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTicketAttachment">
+      <http:operation location="/AddTicketAttachment" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTicketCommentBasic">
+      <http:operation location="/AddTicketCommentBasic" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="AddTicketComment">
+      <http:operation location="/AddTicketComment" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TicketsHttpPost" type="tns:TicketsHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="CreateTicketEx">
+      <http:operation location="/CreateTicketEx" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTicketNew">
+      <http:operation location="/CreateTicketNew" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccounts">
+      <http:operation location="/GetAccounts" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketTypes">
+      <http:operation location="/GetTicketTypes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriorities">
+      <http:operation location="/GetPriorities" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketStatuses">
+      <http:operation location="/GetTicketStatuses" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketAttributes">
+      <http:operation location="/GetTicketAttributes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTickets">
+      <http:operation location="/GetTickets" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTicketAttachment">
+      <http:operation location="/AddTicketAttachment" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTicketCommentBasic">
+      <http:operation location="/AddTicketCommentBasic" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="AddTicketComment">
+      <http:operation location="/AddTicketComment" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Tickets">
+    <wsdl:port name="TicketsSoap" binding="tns:TicketsSoap">
+      <soap:address location="http://localhost/TD/TDWS/Tickets.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TicketsSoap12" binding="tns:TicketsSoap12">
+      <soap12:address location="http://localhost/TD/TDWS/Tickets.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TicketsHttpGet" binding="tns:TicketsHttpGet">
+      <http:address location="http://localhost/TD/TDWS/Tickets.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TicketsHttpPost" binding="tns:TicketsHttpPost">
+      <http:address location="http://localhost/TD/TDWS/Tickets.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

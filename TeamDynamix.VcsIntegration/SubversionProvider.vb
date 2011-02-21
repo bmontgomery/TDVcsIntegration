@@ -1,5 +1,8 @@
 ﻿Imports SharpSvn
 
+'I had to change the VisualSVN subversion server to use my administrator account, or this kept giving me errors about
+'and untrusted certificate issuer
+
 Public Class SubversionProvider
   Implements IVcsProvider
 

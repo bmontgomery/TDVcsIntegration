@@ -92,6 +92,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Service References\TicketsService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="SubversionProvider.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -117,12 +122,26 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="Service References\TicketsService\Tickets1.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="lib\SharpSvn-DB44-20-win32.dll" />
     <Content Include="lib\SharpSvn-Sasl21-23-win32.dll" />
     <Content Include="lib\SharpSvn.dll" />
     <Content Include="lib\SharpSvn.UI.dll" />
+    <None Include="Service References\TicketsService\Tickets1.disco" />
+    <None Include="Service References\TicketsService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\TicketsService\configuration.svcinfo" />
+    <None Include="Service References\TicketsService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\TicketsService\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

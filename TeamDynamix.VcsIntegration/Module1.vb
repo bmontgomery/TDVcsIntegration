@@ -24,6 +24,7 @@
 
     Catch ex As Exception
       Console.WriteLine(ex.Message)
+      System.IO.File.WriteAllText("tdvcs.log", ex.Message)
     End Try
     
   End Sub
@@ -93,7 +94,7 @@
   Private Sub GetTDProxyUserInfo()
 
     mTDProxyUser = Configuration.ConfigurationManager.AppSettings("TDProxyUser")
-    mTDProxyPassword = Configuration.ConfigurationManager.AppSettings("TDProxyPasswrd")
+    mTDProxyPassword = Configuration.ConfigurationManager.AppSettings("TDProxyPassword")
 
     If String.IsNullOrEmpty(mTDProxyUser) Or String.IsNullOrEmpty(mTDProxyPassword) Then Throw New ApplicationException("invalid TeamDynamix proxy user configuration")
 
@@ -101,8 +102,12 @@
 
   Private Sub AddCommentToTicket()
 
-    'TODO: implement on server side - need to write a normal add comment API method
+    GetTDProxyUserInfo()
+
     Dim comment As String = String.Format(cCommentFormat, mCommit.User, mRevision, mRepositoryUrl, mCommit.Message)
+
+    Dim ticketSvcClient As New TicketsService.TicketsSoapClient()
+    ticketSvcClient.AddTicketCommentBasic(mTDProxyUser, mTDProxyPassword, mTicketId, comment, True)
 
   End Sub
 
